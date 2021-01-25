@@ -25,15 +25,8 @@
 {{CustomerModel.CustomerCode}}<br>
 {{CustomerModel.CustomerName}}<br>
 {{CustomerModel.CustomerAmount}}<br>
-<table>
-    <tr>
-        <th>Customer code</th>
-        <th>Customer name</th>
-        <th>Customer amount</th>
-    </tr>
-    <tr *ngFor="let cust of CustomerModels">
-        <td>{{cust.CustomerCode}}</td>
-        <td>{{cust.CustomerName}}</td>
-        <td>{{cust.CustomerAmount}}</td>
-    </tr>
-</table>
+
+<grid-ui [grid-columns]="[{'colName':'CustomerName'},{'colName':'CustomerAmount'},{'colName':'CustomerCode'}]"
+    [grid-data]="CustomerModels"
+    (grid-selected)="SelectCustomer($event)"
+></grid-ui>
