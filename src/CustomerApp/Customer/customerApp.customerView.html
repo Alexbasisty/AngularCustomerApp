@@ -22,9 +22,7 @@
     .controls
     ['CustomerNameControl']
     .hasError('required'))" >Customer name is required</div>
-{{CustomerModel.CustomerCode}}<br>
-{{CustomerModel.CustomerName}}<br>
-{{CustomerModel.CustomerAmount}}<br>
+<input type="button" value="send to server" (click)="PostToServer" />
 
 <grid-ui [grid-columns]="[{'colName':'CustomerName'},{'colName':'CustomerAmount'},{'colName':'CustomerCode'}]"
     [grid-data]="CustomerModels"
