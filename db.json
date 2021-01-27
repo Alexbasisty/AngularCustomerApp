@@ -5,6 +5,30 @@
       "CustomerCode": "1001",
       "CustomerName": "Alex",
       "CustomerAmount": "100.23"
+    },
+    {
+      "CustomerCode": "1234",
+      "CustomerName": "test",
+      "CustomerAmount": 123,
+      "id": 2
+    },
+    {
+      "CustomerCode": "1234",
+      "CustomerName": "test2",
+      "CustomerAmount": 123,
+      "id": 3
+    },
+    {
+      "CustomerCode": "1234",
+      "CustomerName": "onceagain",
+      "CustomerAmount": 20.24,
+      "id": 4
+    },
+    {
+      "CustomerCode": "1234",
+      "CustomerName": "qwer",
+      "CustomerAmount": 123,
+      "id": 5
     }
   ]
 }

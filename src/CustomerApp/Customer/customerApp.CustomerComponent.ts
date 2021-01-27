@@ -17,17 +17,30 @@ export class CustomerComponent {
 
   PostToServer() {
     // http://localhost:3000/Customers
+    var customerDTO:any = {};
+    customerDTO.CustomerCode = this.CustomerModel.CustomerCode;
+    customerDTO.CustomerName = this.CustomerModel.CustomerName;
+    customerDTO.CustomerAmount = this.CustomerModel.CustomerAmount;
+
     this.http.post("http://localhost:3000/Customers",
-         this.CustomerModel)
-        .subscribe(this.Success, this.Error);
+         customerDTO)
+        .subscribe(res=>this.Success(res), res=>this.Error(res));
+  }
+  GetFromServer() {
+    // http://localhost:3000/Customers
+
+    this.http.get("http://localhost:3000/Customers")
+        .subscribe(res=>this.SuccessGet(res), res=>this.Error(res));
   }
   Error(res:any) {
     console.debug(res.json());
   }
   Success(res:any) {
-    this.CustomerModels = res.json();
+    this.GetFromServer();
   }
-
+  SuccessGet(res:any) {
+    this.CustomerModels = res;
+  }
 
   SelectCustomer(_selected:any) {
     this.CustomerModel = _selected;

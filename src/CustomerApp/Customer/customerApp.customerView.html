@@ -2,7 +2,8 @@
     Customer Code :<input formControlName="CustomerCodeControl" [(ngModel)]="CustomerModel.CustomerCode" type=text /><br>
     Customer Name :<input formControlName="CustomerNameControl" [(ngModel)]="CustomerModel.CustomerName" type=text /><br>
     Customer Amount :<input [(ngModel)]="CustomerModel.CustomerAmount" [ngModelOptions]="{standalone: true}" type=number /><br>
-    <input [disabled]="!(CustomerModel.formCustomerGroup.valid)" (click)="Add()" type=button value="Add" /><br>
+    <input [disabled]="!(CustomerModel.formCustomerGroup.valid)" (click)="Add()" type=button value="Add" />
+    <input type="button" value="send to server" (click)="PostToServer()" />
 </form>
 <div *ngIf="CustomerModel.formCustomerGroup.dirty"
     [hidden]="!(CustomerModel
@@ -22,7 +23,6 @@
     .controls
     ['CustomerNameControl']
     .hasError('required'))" >Customer name is required</div>
-<input type="button" value="send to server" (click)="PostToServer" />
 
 <grid-ui [grid-columns]="[{'colName':'CustomerName'},{'colName':'CustomerAmount'},{'colName':'CustomerCode'}]"
     [grid-data]="CustomerModels"
