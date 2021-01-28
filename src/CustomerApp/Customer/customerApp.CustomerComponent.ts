@@ -10,13 +10,14 @@ export class CustomerComponent {
   title = 'CustomerApp';
   CustomerModel: Customer = new Customer();
   CustomerModels : Array<Customer> = new Array<Customer>();
-  
+  Disable:boolean = false;
   constructor(public http:HttpClient) {
     
   }
 
   PostToServer() {
     // http://localhost:3000/Customers
+    this.Disable = true;
     var customerDTO:any = {};
     customerDTO.CustomerCode = this.CustomerModel.CustomerCode;
     customerDTO.CustomerName = this.CustomerModel.CustomerName;
@@ -40,6 +41,8 @@ export class CustomerComponent {
   }
   SuccessGet(res:any) {
     this.CustomerModels = res;
+    this.Disable = false;
+    this.CustomerModel = new Customer();
   }
 
   SelectCustomer(_selected:any) {
