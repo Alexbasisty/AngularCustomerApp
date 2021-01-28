@@ -1,12 +1,12 @@
 <table>
     <tr>
         <td *ngFor="let col of gridColumns">
-            {{col.colName}}
+            {{col['colName']}}
         </td>
     </tr>
     <tr *ngFor="let colObj of gridData">
         <td *ngFor="let col of gridColumns">
-            {{colObj[col.colName]}}
+            {{colObj[col['colName']]}}
         </td>
         <td>
             <a (click)="selectGrid(colObj)" [routerLink]="['/Customer/Add']">select</a>

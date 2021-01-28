@@ -24,7 +24,7 @@
     ['CustomerNameControl']
     .hasError('required'))" >Customer name is required</div>
 
-<grid-ui [grid-columns]="[{'colName':'CustomerName'},{'colName':'CustomerAmount'},{'colName':'CustomerCode'}]"
+<grid-ui [grid-columns]="[{'colName': 'CustomerCode'},{'colName': 'CustomerName'}, {'colName': 'CustomerAmount'}]"
     [grid-data]="CustomerModels"
     (grid-selected)="SelectCustomer($event)"
 ></grid-ui>
